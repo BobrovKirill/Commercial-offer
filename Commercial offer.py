@@ -1,7 +1,6 @@
 from openpyxl import load_workbook
 import docx
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.table import WD_TABLE_ALIGNMENT
 
 
 
@@ -28,28 +27,18 @@ def request(key):
         for key,val in all_product.items():
             data_cells = table.add_row().cells
             data_cells[0].text = str(i)
-            paragraph = data_cells[0].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             data_cells[1].text = key
-            paragraph = data_cells[1].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             data_cells[2].text = str(val[0])
-            paragraph = data_cells[2].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             data_cells[3].text = str(val[1])
-            paragraph = data_cells[3].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             data_cells[4].text = str(val[2])
-            paragraph = data_cells[4].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             data_cells[5].text = str(val[3])
-            paragraph = data_cells[5].paragraphs[0]
-            paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
             sum_price += val[3]
             i += 1
+            for j in range(6):
+                paragraph = data_cells[j].paragraphs[0]
+                paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
     else:
         print('В списке нет данного товара')
-    return sum_price
 
         # Открытие ворда и добавление стилей
 
@@ -71,7 +60,7 @@ for i in range(2):
     merget = table.cell(nums_cells,i).merge(table.cell(nums_cells,i+1))
     merget = table.cell(nums_cells,i+3).merge(table.cell(nums_cells,i+4))
 data_cells[0].text = 'Итого, рублей'
-data_cells[3].text = str(sum_price) # !!!! Создать тут формулу суммы
+data_cells[3].text = str(sum_price)
 paragraph = data_cells[0].paragraphs[0]
 paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 paragraph = data_cells[3].paragraphs[0]
