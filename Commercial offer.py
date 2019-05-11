@@ -2,6 +2,7 @@ from openpyxl import load_workbook
 import docx
 
 
+
         # считывание с excel
 
 
@@ -27,14 +28,37 @@ def request(key):
             data_cells[2].text = str(val[0])
             data_cells[3].text = str(val[1])
             data_cells[4].text = str(val[2])
+            data_cells[5].text = str(val[3])
             i+=1
     else:
         print('В списке нет данного товара')
 
-file = 'task2.docx'
+        # Открытие ворда и добавление стилей
+
+
+file = 'task1.docx' # сделать так чтоб пользователь указывал название и путь шаблона
+file_save = 'task_new.docx' # сделать так чтоб пользователь указывал название файла и путь
 doc = docx.Document(file)
 table = doc.tables[1]
 table.style = 'Table Grid'
 table.autofit = True
 request('apple')
-doc.save(file)
+
+        #формирование двух последних строк с объединением столбцов
+
+
+nums_cells = len(table.rows)
+data_cells = table.add_row().cells
+for i in range(2):
+    merget = table.cell(nums_cells,i).merge(table.cell(nums_cells,i+1))
+    merget = table.cell(nums_cells,i+3).merge(table.cell(nums_cells,i+4))
+data_cells[0].text = 'Итого, рублей'
+data_cells[3].text = 'сумма'
+data_cells = table.add_row().cells
+for i in range(2):
+    merget = table.cell(nums_cells+1,i).merge(table.cell(nums_cells+1,i+1))
+    merget = table.cell(nums_cells+1,i+3).merge(table.cell(nums_cells+1,i+4))
+data_cells[0].text = 'В том числе НДС, руб:'
+data_cells[3].text = 'Без НДС*'
+
+doc.save(file_save)

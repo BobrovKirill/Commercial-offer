@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="714ea499-c418-48e3-8aee-001d40071da0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Commercial offer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Commercial offer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.docx" beforeDir="false" afterPath="$PROJECT_DIR$/demo.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reading word.py" beforeDir="false" afterPath="$PROJECT_DIR$/reading word.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/task1.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/task2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$task.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +22,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Commercial offer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+                <state relative-caret-position="493">
+                  <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
                   </folding>
@@ -37,10 +38,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/reading word.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" selection-start-line="20" selection-end-line="20" />
+                <state relative-caret-position="418">
+                  <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
                   <folding>
-                    <element signature="e#0#11#0" expanded="true" />
+                    <element signature="e#1259#1284#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -221,18 +222,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reading word.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="418">
+          <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#1259#1284#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Commercial offer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        <state relative-caret-position="493">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
