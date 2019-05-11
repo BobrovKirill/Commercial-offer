@@ -7,7 +7,8 @@
       <change beforePath="$PROJECT_DIR$/reading word.py" beforeDir="false" afterPath="$PROJECT_DIR$/reading word.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task1.docx" beforeDir="false" afterPath="$PROJECT_DIR$/task1.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/task2.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/test.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/task_new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$sk_new.docx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,14 +17,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.62035227">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Commercial offer.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
-                  <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+                <state relative-caret-position="303">
+                  <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
                   <folding>
                     <element signature="e#0#34#0" expanded="true" />
                   </folding>
@@ -38,10 +39,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/reading word.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+                <state relative-caret-position="420">
+                  <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
                   <folding>
-                    <element signature="e#1259#1284#0" expanded="true" />
+                    <element signature="e#0#11#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -63,8 +64,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="413" />
-    <option name="y" value="27" />
+    <option name="x" value="131" />
+    <option name="y" value="16" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -178,7 +179,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.30877572" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -191,13 +192,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/word.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="309" selection-start-line="309" selection-end-line="309" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/docx/table.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -213,27 +207,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/docx/shared.py">
+    <entry file="file://$PROJECT_DIR$/reading word.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="420">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reading word.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/docx/shared.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
-          <folding>
-            <element signature="e#1259#1284#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="209">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Commercial offer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="303">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
