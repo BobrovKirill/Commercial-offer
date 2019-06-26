@@ -49,6 +49,8 @@ class Main(tk.Frame): #создание главного окна
         btn_open_excel.place(x= 30, y = 10)
         btn_open_word = tk.Button(toolbar, text = 'Укажите путь до Word файла', command = self.open_word, bg = '#d7d8e0',bd = 2, compound = tk.TOP )
         btn_open_word.place(x= 220, y= 10)
+        btn_save = tk.Button(toolbar, text = 'Укажите путь нового файла', command = path_save)
+        btn_save.place(x=175, y=50)
         btn_start = tk.Button(toolbar, text = 'Создать файл', command = start)
         btn_start.place(x=175, y=100 )
 
@@ -172,7 +174,12 @@ def readyng_word():
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 def start():
-    doc.save('Новое коммерч.docx')
+    doc.save(new_path + '/Новое коммерч.docx')
+
+def path_save():
+    global new_path
+    new_path = filedialog.askdirectory()
+
 
 if __name__ == '__main__':
     root = tk.Tk()
