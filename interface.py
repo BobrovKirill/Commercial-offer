@@ -8,6 +8,7 @@ import docx
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 
+
 def readyng_excel():  # Считывание с excel файла
     global all_product
     all_product = {}
@@ -32,16 +33,6 @@ def dir_word():  # Выбор пути до файла
     path_word.set(fileword)
 
 
-def save_excel():
-    f = fileexcel
-    print(f)
-
-
-def save_word():
-    w = fileword
-    print(fileword)
-
-
 class Main(tk.Frame):  # создание главного окна
     def __init__(self, root):
         super().__init__(root)
@@ -56,14 +47,13 @@ class Main(tk.Frame):  # создание главного окна
         btn_open_word = tk.Button(toolbar, text='Укажите путь до Word файла', command=self.open_word, bg='#d7d8e0',
                                   bd=2, compound=tk.TOP)
         btn_open_word.place(x=220, y=10)
-        btn_save = tk.Button(toolbar, text='Укажите путь нового файла', command=path_save)
+        btn_save = tk.Button(toolbar, text='Укажите путь нового файла', command=path_save, bg='#d7d8e0',bd=2, compound=tk.TOP)
         btn_save.place(x=175, y=50)
-        btn_start = tk.Button(toolbar, text='Создать файл', command=start)
+        btn_start = tk.Button(toolbar, text='Создать файл', command=start, bg='#d7d8e0',bd=2, compound=tk.TOP)
         btn_start.place(x=175, y=100)
 
     def open_exel(self):
         child_excel()
-
     def open_word(self):
         child_word()
 
@@ -89,13 +79,17 @@ class child_excel(tk.Toplevel):  # создание окна для выбора
         btn_cancel = ttk.Button(self, text='Закрыть', command=self.destroy)
         btn_cancel.place(x=465, y=100)
 
-        btn_ok = ttk.Button(self, text='Ok', command=readyng_excel)
+        btn_ok = ttk.Button(self, text='Ok', command=self.button_excel)
         btn_ok.place(x=385, y=100)
         btn_ok.bind('<Button-1>')
 
         btn_browse = ttk.Button(self, text='Обзор', command=dir_excel)
         btn_browse.place(x=465, y=28)
         btn_browse.bind('<Button-1>')
+
+    def button_excel(self):
+        readyng_excel()
+        self.destroy()
 
 
 class child_word(tk.Toplevel):  # создание окна для выбора файла
@@ -119,13 +113,17 @@ class child_word(tk.Toplevel):  # создание окна для выбора 
         btn_cancel = ttk.Button(self, text='Закрыть', command=self.destroy)
         btn_cancel.place(x=465, y=100)
 
-        btn_ok = ttk.Button(self, text='Ok', command=readyng_word)
+        btn_ok = ttk.Button(self, text='Ok', command=self.button_word)
         btn_ok.place(x=385, y=100)
         btn_ok.bind('<Button-1>')
 
         btn_browse = ttk.Button(self, text='Обзор', command=dir_word)
         btn_browse.place(x=465, y=28)
         btn_browse.bind('<Button-1>')
+
+    def button_word(self):
+        readyng_word()
+        self.destroy()
 
         # поиск товара и добавление его в таблицу word
 
@@ -203,4 +201,4 @@ if __name__ == '__main__':
     root.geometry('430x150+700+350')
     root.resizable(False, False)
     root.mainloop()
-# 'this test
+
