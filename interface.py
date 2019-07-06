@@ -10,7 +10,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 
 def readyng_excel():  # Считывание с excel файла
-    global all_product
+    fileexcel = Main.fileexcel
     all_product = {}
     wb = load_workbook(filename=fileexcel, data_only=True)
     ws = wb.active
@@ -18,19 +18,19 @@ def readyng_excel():  # Считывание с excel файла
     for data in ws.values:
         if isinstance(data[0], int):
             all_product[data[1]] = data[2:]
-    return (all_product)
+    Main.all_product = all_product
 
 
 def dir_excel():  # Выбор пути до файла
-    global fileexcel
     fileexcel = filedialog.askopenfilename(filetypes=[('Excel files', '*.xlsx')])
     path_excel.set(fileexcel)
+    Main.fileexcel = fileexcel
 
 
 def dir_word():  # Выбор пути до файла
-    global fileword
     fileword = filedialog.askopenfilename(filetypes=[('Word files', '*.docx')])
     path_word.set(fileword)
+    Main.fileword = fileword
 
 
 class Main(tk.Frame):  # создание главного окна
@@ -130,9 +130,10 @@ class child_word(tk.Toplevel):  # создание окна для выбора 
 
 def readyng_word():
     def request(key):
+        all_product = Main.all_product
         if key in all_product:
             i = 1
-            global sum_price
+            #global sum_price
             sum_price = 0
             for key, val in all_product.items():
                 data_cells = table.add_row().cells
@@ -147,17 +148,18 @@ def readyng_word():
                 for j in range(6):
                     paragraph = data_cells[j].paragraphs[0]
                     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        Main.sum_price = sum_price
 
             # Открытие ворда и добавление стилей
-
+    fileword = Main.fileword
     file = fileword  # сделать так чтоб пользователь указывал название и путь шаблона
-    global doc
+    #global doc
     doc = docx.Document(file)
     table = doc.tables[1]
     request('apple')
 
     # формирование двух последних строк с объединением столбцов
-
+    sum_price = Main.sum_price
     nums_cells = len(table.rows)
     data_cells = table.add_row().cells
     for i in range(2):
@@ -180,16 +182,19 @@ def readyng_word():
     paragraph = data_cells[3].paragraphs[0]
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
+    Main.doc = doc
 
 def start():
+    doc = Main.doc
+    new_path = Main.new_path
     doc.save(new_path + '/Новое коммерч.docx')
     print(new_path + '/Новое коммерч.docx')
 
 
 def path_save():
-    global new_path
+    #global new_path
     new_path = filedialog.askdirectory()
-
+    Main.new_path = new_path
 
 if __name__ == '__main__':
     root = tk.Tk()
