@@ -6,7 +6,8 @@ from tkinter import *
 from openpyxl import load_workbook
 import docx
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-
+from docx.enum.style import  WD_STYLE_TYPE
+from docx.shared import Pt
 
 
 def readyng_excel():  # Считывание с excel файла
@@ -17,7 +18,7 @@ def readyng_excel():  # Считывание с excel файла
 
     for data in ws.values:
         if isinstance(data[0], int):
-            all_product[data[1]] = data[2:]
+            all_product[data[0]] = data[1:]
     Main.all_product = all_product
 
 
@@ -129,25 +130,24 @@ class child_word(tk.Toplevel):  # создание окна для выбора 
 
 
 def readyng_word():
-    def request(key):
+    def request():
         all_product = Main.all_product
-        if key in all_product:
-            i = 1
-            #global sum_price
-            sum_price = 0
-            for key, val in all_product.items():
-                data_cells = table.add_row().cells
-                data_cells[0].text = str(i)
-                data_cells[1].text = key
-                data_cells[2].text = str(val[0])
-                data_cells[3].text = str(val[1])
-                data_cells[4].text = str(val[2])
-                data_cells[5].text = str(val[3])
-                sum_price += val[3]
+        sum_price, val = 0, 0
+        style = doc.styles.add_style('my_style', WD_STYLE_TYPE.PARAGRAPH)
+        style.font.name = 'Times New Roman'
+        style.font.size = Pt(10)
+        for key, value in all_product.items():
+            data_cells = table.add_row().cells
+            data_cells[0].text = str(key)
+            i = 0
+            for val in value:
+                data_cells[i + 1].text = str(val)
                 i += 1
-                for j in range(6):
-                    paragraph = data_cells[j].paragraphs[0]
-                    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            for j in range(len(value)+1):
+                paragraph = data_cells[j].paragraphs[0]
+                paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                paragraph.style = 'my_style'
+            sum_price += val
         Main.sum_price = sum_price
 
             # Открытие ворда и добавление стилей
@@ -156,7 +156,7 @@ def readyng_word():
     #global doc
     doc = docx.Document(file)
     table = doc.tables[1]
-    request('apple')
+    request()
 
     # формирование двух последних строк с объединением столбцов
     sum_price = Main.sum_price
