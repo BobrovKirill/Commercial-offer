@@ -148,51 +148,46 @@ def readyng_word():
                 paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 paragraph.style = 'my_style'
             sum_price += val
-        Main.sum_price = sum_price
 
-            # Открытие ворда и добавление стилей
+        # формирование двух последних строк с объединением столбцов
+
+        nums_cells = len(table.rows)
+        data_cells = table.add_row().cells
+        for i in range(2):
+            merget = table.cell(nums_cells, i).merge(table.cell(nums_cells, i + 1))
+            merget = table.cell(nums_cells, i + 3).merge(table.cell(nums_cells, i + 4))
+        data_cells[0].text = 'Итого, рублей'
+        data_cells[3].text = str(sum_price)
+        paragraph = data_cells[0].paragraphs[0]
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        paragraph = data_cells[3].paragraphs[0]
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        data_cells = table.add_row().cells
+        for i in range(2):
+            merget = table.cell(nums_cells + 1, i).merge(table.cell(nums_cells + 1, i + 1))
+            merget = table.cell(nums_cells + 1, i + 3).merge(table.cell(nums_cells + 1, i + 4))
+        data_cells[0].text = 'В том числе НДС, руб:'
+        data_cells[3].text = 'Без НДС*'
+        paragraph = data_cells[0].paragraphs[0]
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+        paragraph = data_cells[3].paragraphs[0]
+        paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+        # Открытие ворда
     fileword = Main.fileword
-    file = fileword  # сделать так чтоб пользователь указывал название и путь шаблона
-    #global doc
+    file = fileword
     doc = docx.Document(file)
     table = doc.tables[1]
     request()
-
-    # формирование двух последних строк с объединением столбцов
-    sum_price = Main.sum_price
-    nums_cells = len(table.rows)
-    data_cells = table.add_row().cells
-    for i in range(2):
-        merget = table.cell(nums_cells, i).merge(table.cell(nums_cells, i + 1))
-        merget = table.cell(nums_cells, i + 3).merge(table.cell(nums_cells, i + 4))
-    data_cells[0].text = 'Итого, рублей'
-    data_cells[3].text = str(sum_price)
-    paragraph = data_cells[0].paragraphs[0]
-    paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    paragraph = data_cells[3].paragraphs[0]
-    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    data_cells = table.add_row().cells
-    for i in range(2):
-        merget = table.cell(nums_cells + 1, i).merge(table.cell(nums_cells + 1, i + 1))
-        merget = table.cell(nums_cells + 1, i + 3).merge(table.cell(nums_cells + 1, i + 4))
-    data_cells[0].text = 'В том числе НДС, руб:'
-    data_cells[3].text = 'Без НДС*'
-    paragraph = data_cells[0].paragraphs[0]
-    paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    paragraph = data_cells[3].paragraphs[0]
-    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-
     Main.doc = doc
 
 def start():
     doc = Main.doc
     new_path = Main.new_path
     doc.save(new_path + '/Новое коммерч.docx')
-    print(new_path + '/Новое коммерч.docx')
 
 
 def path_save():
-    #global new_path
     new_path = filedialog.askdirectory()
     Main.new_path = new_path
 
